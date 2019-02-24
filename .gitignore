@@ -2,3 +2,4 @@ Include/
 Lib/
 Scripts/
 tcl/
+src/juno/_pycache_/
