@@ -25,7 +25,7 @@ SECRET_KEY = '79*+7*uk@t1vl6%s)v$lg%_^xd^vo-2=8t0rom=f!m-z2)m90#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'www.kirr.com', 'kirr.com', 'kirr', '127.0.0.1']
 
 
 # Application definition
@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shortener',
+    'django_hosts',
 ]
 
 MIDDLEWARE = [
+    'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -47,9 +50,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
 ROOT_URLCONF = 'juno.urls'
+ROOT_HOSTCONF = 'juno.hosts'
+DEFAULT_HOST = 'www.kirr.com:8000/algo'
+DEFAULT_REDIRECT_URL = 'http://www.kirr.com:8000/algo'
 
 TEMPLATES = [
     {

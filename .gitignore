@@ -2,4 +2,12 @@ Include/
 Lib/
 Scripts/
 tcl/
-src/juno/_pycache_/
+src/juno/__pycache__/
+src/shortener/__pycache__/
+src/db.sqlite3
+# ignore generated db migrations files,
+src/shortener/migrations/
+src/juno/hostconf/__pycache__/
+# except __init__.py which is maintained by hand
+!src/shortener/migrations/__init__.py
+
