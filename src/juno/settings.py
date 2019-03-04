@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['localhost', 'www.kirr.com', 'kirr.com', 'kirr', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'shortener.apps.ShortenerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shortener',
     'django_hosts',
 ]
 
@@ -55,8 +55,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'juno.urls'
 ROOT_HOSTCONF = 'juno.hosts'
-DEFAULT_HOST = 'www.kirr.com:8000/algo'
-DEFAULT_REDIRECT_URL = 'http://www.kirr.com:8000/algo'
+DEFAULT_HOST = 'www.kirr.com:8000/kirr'
+DEFAULT_REDIRECT_URL = 'http://www.kirr.com:8000/kirr'
 
 TEMPLATES = [
     {
